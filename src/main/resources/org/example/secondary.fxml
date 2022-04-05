@@ -3,11 +3,12 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -23,7 +24,7 @@
             <ImageView fitHeight="87.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
          </center>
          <top>
-            <Label alignment="CENTER" text="Name" textAlignment="CENTER" textFill="#adf844" BorderPane.alignment="TOP_LEFT" />
+            <Label fx:id="pokemonName" alignment="CENTER" text="Name" textAlignment="CENTER" textFill="#adf844" BorderPane.alignment="TOP_LEFT" />
          </top>
          <left>
             <Label text="Type" textFill="#adf844" BorderPane.alignment="TOP_LEFT" />
@@ -42,9 +43,14 @@
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <BorderPane layoutX="10.0" layoutY="13.0" prefHeight="143.0" prefWidth="301.0" style="-fx-background-color: #E7DEDE;">
-                                 <left>
-                                    <ListView prefHeight="143.0" prefWidth="301.0" BorderPane.alignment="CENTER" />
-                                 </left>
+                                 <center>
+                                    <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn prefWidth="84.0" sortType="DESCENDING" text="GENERALS" />
+                                        <TableColumn prefWidth="216.0" sortType="DESCENDING" text="DETAILS" />
+                                      </columns>
+                                    </TableView>
+                                 </center>
                               </BorderPane>
                            </children></AnchorPane>
                   </content>
@@ -53,22 +59,27 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <SplitPane dividerPositions="0.339041095890411" layoutX="14.0" layoutY="14.0" prefHeight="141.0" prefWidth="294.0">
+                              <SplitPane dividerPositions="0.5376712328767124" layoutX="14.0" layoutY="14.0" prefHeight="141.0" prefWidth="294.0">
                                 <items>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="139.0" prefWidth="123.0">
                                        <children>
-                                          <ListView layoutX="6.0" layoutY="6.0" prefHeight="127.0" prefWidth="85.0" />
+                                          <TableView prefHeight="139.0" prefWidth="156.0">
+                                            <columns>
+                                              <TableColumn prefWidth="105.0" text="GENERALS" />
+                                              <TableColumn prefWidth="45.0" text="RATIO" />
+                                            </columns>
+                                          </TableView>
                                        </children>
                                     </AnchorPane>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="190.0">
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="139.0" prefWidth="154.0">
                                        <children>
-                                          <ProgressBar layoutX="9.0" layoutY="12.0" prefHeight="14.0" prefWidth="163.0" progress="0.0" />
-                                          <ProgressBar layoutX="9.0" layoutY="29.0" prefHeight="14.0" prefWidth="163.0" progress="0.0" />
-                                          <ProgressBar layoutX="9.0" layoutY="46.0" prefHeight="14.0" prefWidth="163.0" progress="0.0" />
-                                          <ProgressBar layoutX="9.0" layoutY="63.0" prefHeight="14.0" prefWidth="163.0" progress="0.0" />
-                                          <ProgressBar layoutX="9.0" layoutY="80.0" prefHeight="14.0" prefWidth="163.0" progress="0.0" />
-                                          <ProgressBar layoutX="9.0" layoutY="97.0" prefHeight="14.0" prefWidth="163.0" progress="0.0" />
-                                          <ProgressBar layoutX="9.0" layoutY="114.0" prefHeight="14.0" prefWidth="163.0" progress="0.0" />
+                                          <ProgressBar layoutX="10.0" layoutY="34.0" prefHeight="7.0" prefWidth="100.0" progress="0.0" />
+                                          <ProgressBar layoutX="10.0" layoutY="48.0" prefHeight="7.0" prefWidth="100.0" progress="0.0" />
+                                          <ProgressBar layoutX="10.0" layoutY="62.0" prefHeight="7.0" prefWidth="100.0" progress="0.0" />
+                                          <ProgressBar layoutX="10.0" layoutY="76.0" prefHeight="7.0" prefWidth="100.0" progress="0.0" />
+                                          <ProgressBar layoutX="10.0" layoutY="91.0" prefHeight="7.0" prefWidth="100.0" progress="0.0" />
+                                          <ProgressBar layoutX="10.0" layoutY="105.0" prefHeight="7.0" prefWidth="100.0" progress="0.0" />
+                                          <ProgressBar layoutX="10.0" layoutY="118.0" prefHeight="7.0" prefWidth="100.0" progress="0.0" />
                                        </children>
                                     </AnchorPane>
                                 </items>
@@ -81,9 +92,14 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <BorderPane layoutX="10.0" layoutY="13.0" prefHeight="142.0" prefWidth="301.0" style="-fx-background-color: #E7DEDE;">
-                                 <left>
-                                    <ListView prefHeight="142.0" prefWidth="301.0" BorderPane.alignment="CENTER" />
-                                 </left></BorderPane>
+                                 <center>
+                                    <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn prefWidth="119.0" text="MOVE" />
+                                        <TableColumn prefWidth="181.0" text="DESCRIPTION" />
+                                      </columns>
+                                    </TableView>
+                                 </center></BorderPane>
                            </children></AnchorPane>
                     </content>
                   </Tab>
